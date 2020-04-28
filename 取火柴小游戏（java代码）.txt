@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+/**
+ * @ClassName Match
+ * @Description 取火柴游戏
+ * @Author panxingyuan
+ * @Date 2020.4.28
+ * @Version 1.0
+ **/
+public class Match {
+    public void start() {
+        int last = 21,user,computer;
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("======目前还有"+last+"根火柴========");
+            System.out.println("请你取走火柴：");
+            user = scanner.nextInt();
+            if(user < 1 || user > 4 || user > last) {
+                System.out.println("你违规了！重新抽取");
+                continue;
+            }
+            last = last-user;
+            if(last == 0) {
+                System.out.println("你取走了最后一根火柴，我赢了！");
+                break;
+            }else {
+                computer = 5-user;
+                last = last-computer;
+                System.out.println("我取走火柴数量："+computer);
+                if(last == 0) {
+                    System.out.println("我取走了最后一根火柴，你赢了！");
+                    break;
+                }
+            }
+
+        }
+    }
+}
+

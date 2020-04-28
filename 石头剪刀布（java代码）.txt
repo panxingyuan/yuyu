@@ -1,0 +1,56 @@
+package 石头;
+
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class MyJavaFX {
+public static void main(String[] args) {
+int userid;
+int computerid;
+Scanner in=new Scanner(System.in);
+System.out.println("------------游戏开始啦------------");
+System.out.println("“请输入序号:< 1.剪刀 2.石头 3.布 >”");
+userid=in.nextInt();
+Random random=new Random();
+computerid=random.nextInt(3)+1;
+if(userid==1||userid==2||userid==3) {
+	switch(userid) {
+		case 1:
+		System.out.println("用户输入的为剪刀");
+		break;
+		case 2:
+		System.out.println("用户输入的为石头");
+		break;
+		case 3:
+		System.out.println("用户输入的为布");
+		break;
+	}
+	switch(computerid){
+		case 1:
+		System.out.println("电脑输入的位剪刀");
+		break;
+		case 2:
+		System.out.println("电脑输入的位石头");
+		break;
+		case 3:
+		System.out.println("电脑输入的位布");
+		break;
+	}
+	if(userid==computerid) {
+		System.out.println("本局为平局");
+	}
+	else if((userid==1&&computerid==2)||(userid==2&&computerid==3)||(userid==3&&computerid==1)) {
+		System.out.println("本局电脑获胜");
+	}
+	else {
+		System.out.println("本局用户获胜");
+	}
+	
+}
+else {
+	System.out.println("您输入的序号有误");
+}
+
+
+}}
